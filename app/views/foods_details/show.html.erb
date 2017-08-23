@@ -9,10 +9,22 @@
       <dd><%= @foods_detail.foods_details_quantity %></dd>
 
       <dt>Foods</dt>
-      <dd><%= @foods_detail.foods_id %></dd>
+      <dd>
+        <% if @foods_detail.foods.present? %>
+          <a href="/foods/<%= @foods_detail.foods_id %>">
+            <%= @foods_detail.foods.foods_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Nutrients</dt>
-      <dd><%= @foods_detail.nutrients_id %></dd>
+      <dd>
+        <% if @foods_detail.nutrients.present? %>
+          <a href="/nutrients/<%= @foods_detail.nutrients_id %>">
+            <%= @foods_detail.nutrients.nutrients_category %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

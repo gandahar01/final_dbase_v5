@@ -18,8 +18,20 @@
       <% @foods_details.each do |foods_detail| %>
       <tr>
         <td><%= foods_detail.foods_details_quantity %></td>
-        <td><%= foods_detail.foods.foods_name %></td>
-        <td><%= foods_detail.nutrients.nutrients_category %></td>
+        <td>
+          <% if foods_detail.foods.present? %>
+            <a href="/foods/<%= foods_detail.foods.id %>">
+              <%= foods_detail.foods.foods_name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if foods_detail.nutrients.present? %>
+            <a href="/nutrients/<%= foods_detail.nutrients.id %>">
+              <%= foods_detail.nutrients.nutrients_category %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/foods_details/<%= foods_detail.id %>" class="btn btn-primary">Show</a>
           <a href="/foods_details/<%= foods_detail.id %>/edit" class="btn btn-warning">Edit</a>

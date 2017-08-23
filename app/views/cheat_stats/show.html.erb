@@ -15,7 +15,13 @@
       <dd><%= @cheat_stat.workout_counter %></dd>
 
       <dt>User</dt>
-      <dd><%= @cheat_stat.user_id %></dd>
+      <dd>
+        <% if @cheat_stat.user.present? %>
+          <a href="/users/<%= @cheat_stat.user_id %>">
+            <%= @cheat_stat.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

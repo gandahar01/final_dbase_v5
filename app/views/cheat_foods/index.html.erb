@@ -20,8 +20,20 @@
       <tr>
         <td><%= cheat_food.servings %></td>
         <td><%= cheat_food.day_of_cheat %></td>
-        <td><%= cheat_food.user.email %></td>
-        <td><%= cheat_food.foods.foods_name %></td>
+        <td>
+          <% if cheat_food.user.present? %>
+            <a href="/users/<%= cheat_food.user.id %>">
+              <%= cheat_food.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if cheat_food.foods.present? %>
+            <a href="/foods/<%= cheat_food.foods.id %>">
+              <%= cheat_food.foods.foods_name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/cheat_foods/<%= cheat_food.id %>" class="btn btn-primary">Show</a>
           

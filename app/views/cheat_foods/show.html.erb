@@ -12,10 +12,22 @@
       <dd><%= @cheat_food.day_of_cheat %></dd>
 
       <dt>User</dt>
-      <dd><%= @cheat_food.user_id %></dd>
+      <dd>
+        <% if @cheat_food.user.present? %>
+          <a href="/users/<%= @cheat_food.user_id %>">
+            <%= @cheat_food.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Foods</dt>
-      <dd><%= @cheat_food.foods_id %></dd>
+      <dd>
+        <% if @cheat_food.foods.present? %>
+          <a href="/foods/<%= @cheat_food.foods_id %>">
+            <%= @cheat_food.foods.foods_name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
