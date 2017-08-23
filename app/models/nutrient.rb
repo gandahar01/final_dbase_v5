@@ -7,6 +7,10 @@ class Nutrient < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :cheat_foods,
+             :through => :foods,
+             :source => :cheat_foods
+
   # Validations
 
 end

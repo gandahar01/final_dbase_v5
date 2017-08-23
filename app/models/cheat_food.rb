@@ -8,6 +8,10 @@ class CheatFood < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :nutrient,
+             :through => :foods,
+             :source => :nutrients
+
   # Validations
 
 end
