@@ -42,7 +42,7 @@
           Nutrients
         </label>
 
-        <input type="text" id="nutrients_id" name="nutrients_id" placeholder="Nutrients" class="form-control" value="<%= @foods_detail.nutrients_id %>">
+        <%= select_tag(:nutrients_id, options_from_collection_for_select(Nutrient.all, :id, :nutrients_category, @foods_detail.nutrients_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
