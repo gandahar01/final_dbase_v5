@@ -10,7 +10,8 @@ class CheatFoodsController < ApplicationController
   end
 
   def index
-    @cheat_foods = current_user.cheat_foods.page(params[:page]).per(10)
+    @q = current_user.cheat_foods.ransack(params[:q])
+      @cheat_foods = @q.result(:distinct => true).includes(:user, :foods, :nutrient).page(params[:page]).per(10)
 
     render("cheat_foods/index.html.erb")
   end

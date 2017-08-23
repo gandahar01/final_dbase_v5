@@ -1,6 +1,7 @@
 class NutrientsController < ApplicationController
   def index
-    @nutrients = Nutrient.page(params[:page]).per(10)
+    @q = Nutrient.ransack(params[:q])
+    @nutrients = @q.result(:distinct => true).includes(:foods_details, :cheat_foods, :foods).page(params[:page]).per(10)
 
     render("nutrients/index.html.erb")
   end

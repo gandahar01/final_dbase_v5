@@ -10,7 +10,8 @@ class CheatStatsController < ApplicationController
   end
 
   def index
-    @cheat_stats = current_user.cheat_stats.page(params[:page]).per(10)
+    @q = current_user.cheat_stats.ransack(params[:q])
+      @cheat_stats = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("cheat_stats/index.html.erb")
   end
