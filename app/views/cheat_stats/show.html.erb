@@ -23,12 +23,14 @@
       <a href="/cheat_stats" class="btn btn-primary">
         Back
       </a>
-      <a href="/cheat_stats/<%= @cheat_stat.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_cheat_stat/<%= @cheat_stat.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @cheat_stat.user %>
+        <a href="/cheat_stats/<%= @cheat_stat.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_cheat_stat/<%= @cheat_stat.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
