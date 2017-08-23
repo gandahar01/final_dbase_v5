@@ -1,5 +1,7 @@
 ActiveAdmin.register CheatFood do
 
+ permit_params :servings, :day_of_cheat, :user_id, :foods_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
