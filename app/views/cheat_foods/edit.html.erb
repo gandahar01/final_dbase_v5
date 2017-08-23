@@ -36,14 +36,8 @@
         <input type="text" id="day_of_cheat" name="day_of_cheat" placeholder="Day of cheat" class="form-control" value="<%= @cheat_food.day_of_cheat %>">
       </div>
 
-      <!-- Label and input for user_id -->
-      <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
-
-        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @cheat_food.user_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for foods_id -->
       <div class="form-group">
