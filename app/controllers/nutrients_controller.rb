@@ -1,6 +1,6 @@
 class NutrientsController < ApplicationController
   def index
-    @nutrients = Nutrient.all
+    @nutrients = Nutrient.page(params[:page]).per(10)
 
     render("nutrients/index.html.erb")
   end
