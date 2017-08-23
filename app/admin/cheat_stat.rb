@@ -1,5 +1,7 @@
 ActiveAdmin.register CheatStat do
 
+ permit_params :calorie_bank, :cheat_days_total, :workout_counter, :user_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
