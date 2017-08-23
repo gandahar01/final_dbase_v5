@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @cheat_food.errors.any? %>
+  <% @cheat_food.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Cheat Food</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_cheat_food" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for servings -->
+      <div class="form-group">
+        <label for="servings" class="control-label">
+          Servings
+        </label>
+
+        <input type="text" id="servings" name="servings" placeholder="Servings" class="form-control" value="<%= @cheat_food.servings %>">
+      </div>
+
+      <!-- Label and input for day_of_cheat -->
+      <div class="form-group">
+        <label for="day_of_cheat" class="control-label">
+          Day of cheat
+        </label>
+
+        <input type="text" id="day_of_cheat" name="day_of_cheat" placeholder="Day of cheat" class="form-control" value="<%= @cheat_food.day_of_cheat %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @cheat_food.user_id %>">
+      </div>
+
+      <!-- Label and input for foods_id -->
+      <div class="form-group">
+        <label for="foods_id" class="control-label">
+          Foods
+        </label>
+
+        <input type="text" id="foods_id" name="foods_id" placeholder="Foods" class="form-control" value="<%= @cheat_food.foods_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Cheat Food
+      </button>
+      or
+      <a href="/cheat_foods">Cancel</a>
+    </form>
+  </div>
+</div>
