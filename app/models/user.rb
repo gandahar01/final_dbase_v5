@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :cheat_stats,
+             :dependent => :destroy
+
   has_many   :cheat_foods,
              :dependent => :destroy
 
