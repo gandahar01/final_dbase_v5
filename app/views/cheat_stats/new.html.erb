@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @cheat_stat.errors.any? %>
+  <% @cheat_stat.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Cheat Stat</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_cheat_stat" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for calorie_bank -->
+      <div class="form-group">
+        <label for="calorie_bank" class="control-label">
+          Calorie bank
+        </label>
+
+        <input type="text" id="calorie_bank" name="calorie_bank" placeholder="Calorie bank" class="form-control" value="<%= @cheat_stat.calorie_bank %>">
+      </div>
+
+      <!-- Label and input for cheat_days_total -->
+      <div class="form-group">
+        <label for="cheat_days_total" class="control-label">
+          Cheat days total
+        </label>
+
+        <input type="text" id="cheat_days_total" name="cheat_days_total" placeholder="Cheat days total" class="form-control" value="<%= @cheat_stat.cheat_days_total %>">
+      </div>
+
+      <!-- Label and input for workout_counter -->
+      <div class="form-group">
+        <label for="workout_counter" class="control-label">
+          Workout counter
+        </label>
+
+        <input type="text" id="workout_counter" name="workout_counter" placeholder="Workout counter" class="form-control" value="<%= @cheat_stat.workout_counter %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @cheat_stat.user_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Cheat Stat
+      </button>
+      or
+      <a href="/cheat_stats">Cancel</a>
+    </form>
+  </div>
+</div>

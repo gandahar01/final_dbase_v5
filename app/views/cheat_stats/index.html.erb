@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Cheat stats
+    <a href="/cheat_stats/new" class="btn btn-lg btn-success">New Cheat stat</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Calorie bank</th>
+        <th>Cheat days total</th>
+        <th>Workout counter</th>
+        <th>User</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @cheat_stats.each do |cheat_stat| %>
+      <tr>
+        <td><%= cheat_stat.calorie_bank %></td>
+        <td><%= cheat_stat.cheat_days_total %></td>
+        <td><%= cheat_stat.workout_counter %></td>
+        <td><%= cheat_stat.user_id %></td>
+        <td>
+          <a href="/cheat_stats/<%= cheat_stat.id %>" class="btn btn-primary">Show</a>
+          <a href="/cheat_stats/<%= cheat_stat.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_cheat_stat/<%= cheat_stat.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

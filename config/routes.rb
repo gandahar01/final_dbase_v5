@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Cheat_stat resource:
+  # CREATE
+  get "/cheat_stats/new", :controller => "cheat_stats", :action => "new"
+  post "/create_cheat_stat", :controller => "cheat_stats", :action => "create"
+
+  # READ
+  get "/cheat_stats", :controller => "cheat_stats", :action => "index"
+  get "/cheat_stats/:id", :controller => "cheat_stats", :action => "show"
+
+  # UPDATE
+  get "/cheat_stats/:id/edit", :controller => "cheat_stats", :action => "edit"
+  post "/update_cheat_stat/:id", :controller => "cheat_stats", :action => "update"
+
+  # DELETE
+  get "/delete_cheat_stat/:id", :controller => "cheat_stats", :action => "destroy"
+  #------------------------------
+
   # Routes for the Food resource:
   # CREATE
   get "/foods/new", :controller => "foods", :action => "new"

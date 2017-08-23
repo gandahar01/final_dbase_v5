@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Cheat Stat #<%= @cheat_stat.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Calorie bank</dt>
+      <dd><%= @cheat_stat.calorie_bank %></dd>
+
+      <dt>Cheat days total</dt>
+      <dd><%= @cheat_stat.cheat_days_total %></dd>
+
+      <dt>Workout counter</dt>
+      <dd><%= @cheat_stat.workout_counter %></dd>
+
+      <dt>User</dt>
+      <dd><%= @cheat_stat.user_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/cheat_stats" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/cheat_stats/<%= @cheat_stat.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_cheat_stat/<%= @cheat_stat.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
