@@ -6,6 +6,8 @@ class FoodsController < ApplicationController
   end
 
   def show
+    @foods_detail = FoodsDetail.new
+    @cheat_food = CheatFood.new
     @food = Food.find(params[:id])
 
     render("foods/show.html.erb")

@@ -6,6 +6,7 @@ class NutrientsController < ApplicationController
   end
 
   def show
+    @foods_detail = FoodsDetail.new
     @nutrient = Nutrient.find(params[:id])
 
     render("nutrients/show.html.erb")

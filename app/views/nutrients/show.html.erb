@@ -57,6 +57,44 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_foods_detail" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for foods_details_quantity -->
+      <div class="form-group">
+        <label for="foods_details_quantity" class="control-label">
+          Foods details quantity
+        </label>
+
+        <input type="text" id="foods_details_quantity" name="foods_details_quantity" placeholder="Foods details quantity" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for foods_id -->
+      <div class="form-group">
+        <label for="foods_id" class="control-label">
+          Foods
+        </label>
+
+        <%= select_tag(:foods_id, options_from_collection_for_select(Food.all, :id, :foods_name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for nutrients_id -->
+      <div class="form-group">
+        <label for="nutrients_id" class="control-label">
+          Nutrients
+        </label>
+
+        <%= select_tag(:nutrients_id, options_from_collection_for_select(Nutrient.all, :id, :nutrients_category), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Foods Detail
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
