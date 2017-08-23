@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @nutrient.errors.any? %>
+  <% @nutrient.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Nutrient #<%= @nutrient.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_nutrient/<%= @nutrient.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for nutrients_category -->
+      <div class="form-group">
+        <label for="nutrients_category" class="control-label">
+          Nutrients category
+        </label>
+
+        <input type="text" id="nutrients_category" name="nutrients_category" placeholder="Nutrients category" class="form-control" value="<%= @nutrient.nutrients_category %>">
+      </div>
+
+      <!-- Label and input for nutrients_unit_of_measure -->
+      <div class="form-group">
+        <label for="nutrients_unit_of_measure" class="control-label">
+          Nutrients unit of measure
+        </label>
+
+        <input type="text" id="nutrients_unit_of_measure" name="nutrients_unit_of_measure" placeholder="Nutrients unit of measure" class="form-control" value="<%= @nutrient.nutrients_unit_of_measure %>">
+      </div>
+
+      <!-- Label and input for nutrients_name -->
+      <div class="form-group">
+        <label for="nutrients_name" class="control-label">
+          Nutrients name
+        </label>
+
+        <input type="text" id="nutrients_name" name="nutrients_name" placeholder="Nutrients name" class="form-control" value="<%= @nutrient.nutrients_name %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Nutrient
+      </button>
+      or
+      <a href="/nutrients/<%= @nutrient.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
