@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @food.errors.any? %>
+  <% @food.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Food #<%= @food.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_food/<%= @food.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for foods_name -->
+      <div class="form-group">
+        <label for="foods_name" class="control-label">
+          Foods name
+        </label>
+
+        <input type="text" id="foods_name" name="foods_name" placeholder="Foods name" class="form-control" value="<%= @food.foods_name %>">
+      </div>
+
+      <!-- Label and input for foods_category -->
+      <div class="form-group">
+        <label for="foods_category" class="control-label">
+          Foods category
+        </label>
+
+        <input type="text" id="foods_category" name="foods_category" placeholder="Foods category" class="form-control" value="<%= @food.foods_category %>">
+      </div>
+
+      <!-- Label and input for number_of_servings -->
+      <div class="form-group">
+        <label for="number_of_servings" class="control-label">
+          Number of servings
+        </label>
+
+        <input type="text" id="number_of_servings" name="number_of_servings" placeholder="Number of servings" class="form-control" value="<%= @food.number_of_servings %>">
+      </div>
+
+      <!-- Label and input for servings_unit -->
+      <div class="form-group">
+        <label for="servings_unit" class="control-label">
+          Servings unit
+        </label>
+
+        <input type="text" id="servings_unit" name="servings_unit" placeholder="Servings unit" class="form-control" value="<%= @food.servings_unit %>">
+      </div>
+
+      <!-- Label and input for usda_ndb -->
+      <div class="form-group">
+        <label for="usda_ndb" class="control-label">
+          Usda ndb
+        </label>
+
+        <input type="text" id="usda_ndb" name="usda_ndb" placeholder="Usda ndb" class="form-control" value="<%= @food.usda_ndb %>">
+      </div>
+
+      <!-- Label and input for calories -->
+      <div class="form-group">
+        <label for="calories" class="control-label">
+          Calories
+        </label>
+
+        <input type="text" id="calories" name="calories" placeholder="Calories" class="form-control" value="<%= @food.calories %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Food
+      </button>
+      or
+      <a href="/foods/<%= @food.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

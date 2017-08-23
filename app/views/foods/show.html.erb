@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h3>Food #<%= @food.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Foods name</dt>
+      <dd><%= @food.foods_name %></dd>
+
+      <dt>Foods category</dt>
+      <dd><%= @food.foods_category %></dd>
+
+      <dt>Number of servings</dt>
+      <dd><%= @food.number_of_servings %></dd>
+
+      <dt>Servings unit</dt>
+      <dd><%= @food.servings_unit %></dd>
+
+      <dt>Usda ndb</dt>
+      <dd><%= @food.usda_ndb %></dd>
+
+      <dt>Calories</dt>
+      <dd><%= @food.calories %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/foods" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/foods/<%= @food.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_food/<%= @food.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
