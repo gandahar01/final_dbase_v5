@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @foods_detail.errors.any? %>
+  <% @foods_detail.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Foods Detail</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_foods_detail" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for foods_details_quantity -->
+      <div class="form-group">
+        <label for="foods_details_quantity" class="control-label">
+          Foods details quantity
+        </label>
+
+        <input type="text" id="foods_details_quantity" name="foods_details_quantity" placeholder="Foods details quantity" class="form-control" value="<%= @foods_detail.foods_details_quantity %>">
+      </div>
+
+      <!-- Label and input for foods_id -->
+      <div class="form-group">
+        <label for="foods_id" class="control-label">
+          Foods
+        </label>
+
+        <input type="text" id="foods_id" name="foods_id" placeholder="Foods" class="form-control" value="<%= @foods_detail.foods_id %>">
+      </div>
+
+      <!-- Label and input for nutrients_id -->
+      <div class="form-group">
+        <label for="nutrients_id" class="control-label">
+          Nutrients
+        </label>
+
+        <input type="text" id="nutrients_id" name="nutrients_id" placeholder="Nutrients" class="form-control" value="<%= @foods_detail.nutrients_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Foods Detail
+      </button>
+      or
+      <a href="/foods_details">Cancel</a>
+    </form>
+  </div>
+</div>

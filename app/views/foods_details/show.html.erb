@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Foods Detail #<%= @foods_detail.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Foods details quantity</dt>
+      <dd><%= @foods_detail.foods_details_quantity %></dd>
+
+      <dt>Foods</dt>
+      <dd><%= @foods_detail.foods_id %></dd>
+
+      <dt>Nutrients</dt>
+      <dd><%= @foods_detail.nutrients_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/foods_details" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/foods_details/<%= @foods_detail.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_foods_detail/<%= @foods_detail.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>
+    Foods details
+    <a href="/foods_details/new" class="btn btn-lg btn-success">New Foods detail</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Foods details quantity</th>
+        <th>Foods</th>
+        <th>Nutrients</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @foods_details.each do |foods_detail| %>
+      <tr>
+        <td><%= foods_detail.foods_details_quantity %></td>
+        <td><%= foods_detail.foods_id %></td>
+        <td><%= foods_detail.nutrients_id %></td>
+        <td>
+          <a href="/foods_details/<%= foods_detail.id %>" class="btn btn-primary">Show</a>
+          <a href="/foods_details/<%= foods_detail.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_foods_detail/<%= foods_detail.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
