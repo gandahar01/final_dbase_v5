@@ -1,5 +1,5 @@
 class CheatStatsController < ApplicationController
-  before_action :current_user_must_be_cheat_stat_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_cheat_stat_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_cheat_stat_user
     cheat_stat = CheatStat.find(params[:id])
