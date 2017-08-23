@@ -10,7 +10,7 @@ class CheatFoodsController < ApplicationController
   end
 
   def index
-    @cheat_foods = CheatFood.all
+    @cheat_foods = current_user.cheat_foods.page(params[:page]).per(10)
 
     render("cheat_foods/index.html.erb")
   end
