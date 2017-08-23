@@ -29,3 +29,96 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many cheat_foods -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Cheat Foods
+      </li>
+
+      <% @user.cheat_foods.each do |cheat_food| %>
+        <li class="list-group-item">
+          <a href="/cheat_foods/<%= cheat_food.id %>">
+            <%= cheat_food.servings %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/cheat_foods/<%= cheat_food.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/cheat_foods/<%= cheat_food.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_cheat_food/<%= cheat_food.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many cheat_stats -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Cheat Stats
+      </li>
+
+      <% @user.cheat_stats.each do |cheat_stat| %>
+        <li class="list-group-item">
+          <a href="/cheat_stats/<%= cheat_stat.id %>">
+            <%= cheat_stat.calorie_bank %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/cheat_stats/<%= cheat_stat.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/cheat_stats/<%= cheat_stat.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_cheat_stat/<%= cheat_stat.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many foods -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Foods
+      </li>
+
+      <% @user.foods.each do |food| %>
+        <li class="list-group-item">
+          <a href="/foods/<%= food.id %>">
+            <%= food.foods_name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/foods/<%= food.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/foods/<%= food.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_food/<%= food.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

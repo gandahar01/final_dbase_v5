@@ -38,3 +38,127 @@
     </div>
   </div>
 </div>
+
+<!-- A Food has many cheat_foods -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Cheat Foods
+      </li>
+
+      <% @food.cheat_foods.each do |cheat_food| %>
+        <li class="list-group-item">
+          <a href="/cheat_foods/<%= cheat_food.id %>">
+            <%= cheat_food.servings %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/cheat_foods/<%= cheat_food.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/cheat_foods/<%= cheat_food.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_cheat_food/<%= cheat_food.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Food has many foods_details -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Foods Details
+      </li>
+
+      <% @food.foods_details.each do |foods_detail| %>
+        <li class="list-group-item">
+          <a href="/foods_details/<%= foods_detail.id %>">
+            <%= foods_detail.foods_details_quantity %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/foods_details/<%= foods_detail.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/foods_details/<%= foods_detail.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_foods_detail/<%= foods_detail.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Food has many users -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Users
+      </li>
+
+      <% @food.users.each do |user| %>
+        <li class="list-group-item">
+          <a href="/users/<%= user.id %>">
+            <%= user.email %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/users/<%= user.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/users/<%= user.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_user/<%= user.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Food has many nutrients -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Nutrients
+      </li>
+
+      <% @food.nutrients.each do |nutrient| %>
+        <li class="list-group-item">
+          <a href="/nutrients/<%= nutrient.id %>">
+            <%= nutrient.nutrients_category %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/nutrients/<%= nutrient.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/nutrients/<%= nutrient.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_nutrient/<%= nutrient.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
