@@ -1,5 +1,7 @@
 ActiveAdmin.register Nutrient do
 
+ permit_params :nutrients_category, :nutrients_unit_of_measure, :nutrients_name
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
