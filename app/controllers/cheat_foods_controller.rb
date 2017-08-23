@@ -1,4 +1,14 @@
 class CheatFoodsController < ApplicationController
+  before_action :current_user_must_be_cheat_food_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_cheat_food_user
+    cheat_food = CheatFood.find(params[:id])
+
+    unless current_user == cheat_food.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @cheat_foods = CheatFood.all
 
