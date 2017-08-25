@@ -20,5 +20,9 @@ class Food < ApplicationRecord
              :source => :user
 
   # Validations
+  validates :foods_name, presence: true
+  validates :foods_category, presence: true
+  validates :servings_unit, presence: true
+  validates :number_of_servings, presence: true, numericality: {greater_than: 0}
 
 end

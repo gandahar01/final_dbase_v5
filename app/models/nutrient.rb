@@ -16,5 +16,8 @@ class Nutrient < ApplicationRecord
              :source => :cheat_foods
 
   # Validations
+  validates :name, presence: true, uniqueness: true
+  validates :category, presence: true
+  validates :nutrients_unit_of_measure, presence: true
 
 end
