@@ -41,6 +41,21 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
+          <li><a href="/batch_action_admin_foods">Batch Action Admin Foods</a></li>
+          <li><a href="/admin_foods">Admin Foods</a></li>
+          <li><a href="/batch_action_admin_users">Batch Action Admin Users</a></li>
+          <li><a href="/admin_users">Admin Users</a></li>
+          <li><a href="/batch_action_admin_nutrients">Batch Action Admin Nutrients</a></li>
+          <li><a href="/admin_nutrients">Admin Nutrients</a></li>
+          <li><a href="/batch_action_admin_cheat_stats">Batch Action Admin Cheat Stats</a></li>
+          <li><a href="/admin_cheat_stats">Admin Cheat Stats</a></li>
+          <li><a href="/batch_action_admin_cheat_foods">Batch Action Admin Cheat Foods</a></li>
+          <li><a href="/admin_cheat_foods">Admin Cheat Foods</a></li>
+          <li><a href="/batch_action_admin_foods_details">Batch Action Admin Foods Details</a></li>
+          <li><a href="/admin_foods_details">Admin Foods Details</a></li>
+          <li><a href="/batch_action_admin_admin_users">Batch Action Admin Admin Users</a></li>
+          <li><a href="/admin_admin_users">Admin Admin Users</a></li>
+          <li><a href="/admin_admin_comments">Admin Admin Comments</a></li>
           <li><a href="/foods_details">Foods Details</a></li>
           <li><a href="/nutrients">Nutrients</a></li>
           <li><a href="/cheat_stats">Cheat Stats</a></li>
@@ -51,31 +66,8 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <% if current_user.present? %>
-            <li>
-              <a href="/users/edit">
-                <%= current_user.email %>
-              </a>
-            </li>
-
-            <li>
-              <a href="/users/sign_out" data-method="delete" rel="nofollow">
-                Sign Out
-              </a>
-            </li>
-          <% else %>
-            <li>
-              <a href="/users/sign_up">
-                Sign Up
-              </a>
-            </li>
-
-            <li>
-              <a href="/users/sign_in">
-                Sign In
-              </a>
-            </li>
-          <% end %>
+          <li><a href="/users/edit">Dummy Edit Profile Link</a></li>
+          <li><a href="/users/sign_out" data-method="delete" rel="nofollow">Dummy Sign Out Link</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div>
